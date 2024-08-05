@@ -1,0 +1,100 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui a borda e o padding na largura e altura dos elementos */
+}
+
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão da página como Arial, Helvetica ou uma fonte sans-serif */
+    line-height: 1.6; /* Define a altura da linha para melhorar a legibilidade do texto */
+    background-color: #cde2ee; /* Define a cor de fundo da página como um tom claro de azul */
+    color: #333; /* Define a cor do texto como um cinza escuro para bom contraste */
+    padding: 20px; /* Adiciona 20 pixels de espaçamento interno ao redor do conteúdo da página */
+}
+
+/* Estilo do título */
+h1 {
+    color: #333; /* Define a cor do texto do título como cinza escuro */
+    margin-bottom: 20px; /* Adiciona 20 pixels de espaço abaixo do título */
+    text-align: center; /* Centraliza o texto do título horizontalmente */
+}
+
+/* Estilo do formulário */
+form {
+    background-color: #fff; /* Define a cor de fundo do formulário como branca */
+    padding: 20px; /* Adiciona 20 pixels de espaçamento interno ao redor do conteúdo do formulário */
+    border-radius: 8px; /* Arredonda os cantos do formulário com um raio de 8 pixels */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve ao formulário para destacar seu contorno */
+    max-width: 500px; /* Define a largura máxima do formulário como 500 pixels */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente na página */
+}
+
+/* Estilo dos rótulos */
+label {
+    display: block; /* Faz com que cada rótulo ocupe uma linha inteira */
+    margin-bottom: 8px; /* Adiciona 8 pixels de espaço abaixo de cada rótulo */
+    font-weight: bold; /* Torna o texto dos rótulos em negrito */
+}
+
+/* Estilo dos campos de texto e select */
+input, select {
+    width: calc(100% - 22px); /* Define a largura dos campos como 100% do contêiner, menos 22 pixels para acomodar o padding e a borda */
+    padding: 10px; /* Adiciona 10 pixels de preenchimento interno dentro dos campos */
+    margin-bottom: 15px; /* Adiciona 15 pixels de espaço abaixo dos campos */
+    border: 1px solid #ddd; /* Define uma borda leve e cinza ao redor dos campos */
+    border-radius: 4px; /* Arredonda os cantos dos campos com um raio de 4 pixels */
+    font-size: 16px; /* Define o tamanho da fonte dentro dos campos */
+}
+
+/* Estilo para quando os campos de entrada e seleção estão em foco */
+input:focus, select:focus {
+    border-color: #007bff; /* Muda a cor da borda para azul quando o campo está em foco */
+    outline: none; /* Remove o contorno padrão que pode aparecer em alguns navegadores ao focar o campo */
+}
+
+/* Estilo opcional para os botões */
+button {
+    padding: 10px 20px; /* Adiciona 10 pixels de preenchimento vertical e 20 pixels horizontal dentro dos botões */
+    border: none; /* Remove a borda padrão dos botões */
+    border-radius: 4px; /* Arredonda os cantos dos botões com um raio de 4 pixels */
+    font-size: 16px; /* Define o tamanho da fonte dentro dos botões */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave de 0.3 segundos para a cor de fundo do botão ao passar o mouse */
+}
+
+/* Estilo do botão de submissão */
+button[type="submit"] {
+    background-color: #007bff; /* Define a cor de fundo do botão de salvar como azul */
+    color: white; /* Define a cor do texto do botão como branco */
+}
+
+/* Estilo do botão de submissão ao passar o mouse */
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Muda a cor de fundo para um azul mais escuro ao passar o mouse */
+}
+
+/* Estilo do botão de reset */
+button[type="reset"] {
+    background-color: #6c757d; /* Define a cor de fundo do botão de limpar como cinza */
+    color: white; /* Define a cor do texto do botão como branco */
+}
+
+/* Estilo do botão de reset ao passar o mouse */
+button[type="reset"]:hover {
+    background-color: #5a6268; /* Muda a cor de fundo para um cinza mais escuro ao passar o mouse */
+}
+
+/* Estilo dos botões quando estão em foco */
+button:focus {
+    outline: 2px solid #0056b3; /* Adiciona um contorno azul ao redor do botão quando ele está em foco */
+    outline-offset: 2px; /* Adiciona espaço entre o contorno e o botão */
+}
+
+/* Estilo responsivo */
+@media (max-width: 600px) {
+    form {
+        padding: 15px; /* Reduz o padding do formulário em telas menores para melhor ajuste */
+    }
+}
