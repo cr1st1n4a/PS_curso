@@ -1,27 +1,16 @@
 <?php
+define('DB_HOST', 'localhost');
+define('DB_PORT', 5432);
+define('DB_NAME', 'd4dos1');
+define('DB_USER', 'cr1st1n4a');
+define('DB_PASS', 'c09262824');
 
-class bank
-{
-    public function insert(
-        array $fieldAndValues = [],
-        string $table =''
-    ) {
-        $values = array_values($fieldAndValues);
-        #O metodo privado do php array_keys separa todas e monta um outro array somente para a chave
-        $fields = array_keys($fieldAndValues);
-        $stringField = implode(',', $fields);
-        $stringValues = ':' . implode(',:', $fields);
-        $sql = "insert into {$table} ({$stringField}) values ({$stringValues});";
-        var_dump($sql);
-    }
+try {
+    $dsn = "pgsql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME;
+    $pdo = new PDO($dsn, DB_USER, DB_PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Conexão bem-sucedida!";
+} catch (PDOException $e) {
+    echo "Ocorreu um erro ao conectar ao banco de dados: " . $e->getMessage();
 }
-
-$bank = new bank();
-$fieldAndValues =[
-    'codigo_banco'  => '001',
-    'isbp'          => '001',
-    'nome'          => 'Banco do Brasil',
-    'nome_completo' => 'Banco do Brasil'
-];
-$bank->insert($fieldAndValues, 'bank');
 ?>
