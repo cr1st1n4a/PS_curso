@@ -35,8 +35,6 @@ class Connection
             static::$pdo = new PDO($dsn, 'cr1st1n4a', 'c09262824', $options);
             #Permite a captura e o salvamento de acentuação no banco
             static::$pdo->exec("SET NAMES 'utf8'");
-            //caso seja bem-sucedida a conexão retornamos a variavel $pdo;
-            echo "Conexão realizada com sucesso!";
             return static::$pdo;
         } catch (\PDOException $e) {
             #Lança uma exceção ou uma mensagem de erro 
