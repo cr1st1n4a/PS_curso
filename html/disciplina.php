@@ -1,31 +1,43 @@
+
+
 <?php
 
 use app\database\builder\InsertQuery;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-header('Content-Type: application/json');
-
-// Recebe os dados JSON do corpo da requisição
-$data = json_decode(file_get_contents('php://input'), true);
-
-// Verifica se a decodificação foi bem-sucedida
-if (json_last_error() !== JSON_ERROR_NONE) {
-    echo json_encode(['message' => 'Erro ao processar dados JSON.']);
-    exit;
-}
-
-$disciplina = [
-    'nome'    => $_POST['disciplina_nome'],
-    'ativo'   => isset($_POST['disciplina_status']) ? 'true' : 'false',
+$disciplinaMatematica = [
+    'nome'    => 'Matemática',
+    'ativo'   =>'true',
 ];
 
-$IsSave = InsertQuery::table('disciplina')->save($disciplina);
+$IsSave = InsertQuery::table('disciplina')->save($disciplinaMatematica);
 
-if (!$IsSave) {
-    echo json_encode(['message' => 'Não foi possível salvar']);
-    exit;
+$disciplinaciencias = [
+    'nome'    => 'ciências',
+    'ativo'   => 'false',
+];
+
+$IsSave = InsertQuery::table('disciplina')->save($disciplinaciencias);
+
+$disciplinahistoria = [
+    'nome'    => 'história',
+    'ativo'   => 'false',
+];
+
+$IsSave = InsertQuery::table('disciplina')->save($disciplinahistoria);
+
+$disciplinageografia = [
+    'nome'    => 'geográfia',
+    'ativo'   => 'true',
+];
+
+$IsSave = InsertQuery::table('disciplina')->save($disciplinageografia);
+
+if ($IsSave != true) {
+    echo 'Não foi possível salvar';
+    die;
 }
 
-echo json_encode(['message' => 'Disciplina salvo com sucesso!']);
+echo 'Disciplina salvo com sucesso!';
 

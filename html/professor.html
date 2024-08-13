@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/css/index.css">
+
+    
+</head>
+
+<body>
+    
+    <h1>Menu de Cadastro</h1>
+    <ul>
+        <li><a href="aluno.html">Cadastro de aluno</a></li>
+        <li><a href="empresa.html">Cadastro de empresa</a></li>
+        <li><a href="professor.html">Cadastro de professor</a></li>
+        <li><a href="disciplina.html">Cadastro de disciplina</a></li>
+        <li><a href="turma.html">Cadastro de turma</a></li>
+    </ul>
+
+    <form name="professor" id="professor" method="post">
+        <h2>Cadastro de professor</h2>
+        <!--nome do tipo Text-->
+        <label for="professor_nome">Nome</label>
+        <br>
+        <input type="text" id="professor_nome" name="professor_nome" placeholder="Digite seu nome" />
+        <br>
+
+        <!--cpf do tipo text-->
+        <label for="professor_cpf">CPF</label>
+        <br>
+        <input type="text" id="professor_cpf" name="professor_cpf" placeholder="Digite seu CPF" />
+        <br>
+
+        <!--rg do tipo text-->
+        <label for="professor-rg">RG</label>
+        <br>
+        <input type="text" id="professor_rg" name="professor_rg" placeholder="Digite seu RG" />
+        <br>
+
+        <!--data de nascimento do tipo date-->
+        <label for="professor_data_nascimento">Data de nascimento</label>
+        <br>
+        <input type="date" id="professor_data_nascimento" name="professor_data_nascimento" />
+        <br>
+        <button type="button" id="salvar_professor">Salvar</button>
+    </form>
+   
+</body>                                 
+
+</html>

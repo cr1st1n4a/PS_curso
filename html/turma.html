@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/css/index.css">
+
+</head>
+
+<body>
+    <h1>Menu de Cadastro</h1>
+    <ul>
+        <li><a href="aluno.html">Cadastro de aluno</a></li>
+        <li><a href="empresa.html">Cadastro de empresa</a></li>
+        <li><a href="professor.html">Cadastro de professor</a></li>
+        <li><a href="disciplina.html">Cadastro de disciplina</a></li>
+        <li><a href="turma.html">Cadastro de turma</a></li>
+    </ul>
+
+    <form name="turma" id="turma" method="post">
+        <h2>Cadastro de turma</h2>
+        <label for="quantidade_alunos">Quantidade de alunos</label>
+        <br>
+        <input type="number" id="quantidade_alunos" name="quantidade_alunos" placeholder="Digite a quantidade de alunos" />
+        <br>
+        <label for="data_inicio">Data de inicio</label>
+        <br>
+        <input type="date" id="data_inicio" name="data_inicio" placeholder="Digite a data de inicio" />
+        <br>
+        <label for="data_fim">Data de fim</label>
+        <br>
+        <input type="date" id="data_fim" name="data_fim" placeholder="Digite a data de fim" />
+        <br>
+        <button type="button" id="salvar_turma">Salvar</button>
+    </form>
+</body>                                 
+
+</html>

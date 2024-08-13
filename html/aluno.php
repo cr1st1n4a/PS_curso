@@ -1,34 +1,49 @@
+
+
 <?php
 
 use app\database\builder\InsertQuery;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-header('Content-Type: application/json');
-
-// Recebe os dados JSON do corpo da requisição
-$data = json_decode(file_get_contents('php://input'), true);
-
-// Verifica se a decodificação foi bem-sucedida
-if (json_last_error() !== JSON_ERROR_NONE) {
-    echo json_encode(['message' => 'Erro ao processar dados JSON.']);
-    exit;
-}
-
-$FieldsAndValues = [
-    'nome'               => $_POST['aluno_nome'],
-    'cpf'                => $_POST['aluno_cpf'],
-    'rg'                 => $_POST['aluno_rg'],
-    'data_de_nascimento' => $_POST['aluno_data_nascimento'],
+$alunofernanda = [
+    'nome'               => 'Fernanda',
+    'cpf'                => '000.000.000-00',
+    'rg'                 => '12345',
+    'data_de_nascimento' => '1999-06-06',
 ];
-$IsSave = InsertQuery::table('Aluno')->save($FieldsAndValues);
+$IsSave = InsertQuery::table('Aluno')->save($alunofernanda);
 
-if (!$IsSave) {
-    echo json_encode(['message' => 'Não foi possível salvar']);
-    exit;
+$alunoLuana = [
+    'nome'               => 'Luana',
+    'cpf'                => '000.000.000-00',
+    'rg'                 => '12365',
+    'data_de_nascimento' => '1999-07-06',
+];
+$IsSave = InsertQuery::table('Aluno')->save($alunoLuana);
+
+$alunoClara = [
+    'nome'               => 'Clara',
+    'cpf'                => '000.000.000-00',
+    'rg'                 => '12369',
+    'data_de_nascimento' => '1999-07-08',
+];
+$IsSave = InsertQuery::table('Aluno')->save($alunoClara);
+
+$alunoLucas = [
+    'nome'               => 'Lucas',
+    'cpf'                => '000.000.000-00',
+    'rg'                 => '82369',
+    'data_de_nascimento' => '1999-07-10',
+];
+$IsSave = InsertQuery::table('Aluno')->save($alunoLucas);
+
+if ($IsSave != true) {
+    echo 'Não foi possível salvar';
+    die;
 }
 
-echo json_encode(['message' => 'Aluno salvo com sucesso!']);
+echo 'Aluno salvo com sucesso!';
 
 
 

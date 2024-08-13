@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/css/index.css">
+
+    
+</head>
+
+<body>
+    
+<h1>Menu de Cadastro</h1>
+    <ul>
+        <li><a href="aluno.html">Cadastro de aluno</a></li>
+        <li><a href="empresa.html">Cadastro de empresa</a></li>
+        <li><a href="professor.html">Cadastro de professor</a></li>
+        <li><a href="disciplina.html">Cadastro de disciplina</a></li>
+        <li><a href="turma.html">Cadastro de turma</a></li>
+    </ul>
+
+
+<form name="empresa" id="empresa" method="post">
+        <h2>Cadastro de empresa</h2>
+        <!--nome fantasia do tipo Text-->
+        <label for="empresa_nome_fantasia">Nome fantasia</label>
+        <br>
+        <input type="text" id="empresa_nome_fantasia" name="empresa_nome_fantasia" placeholder="Digite o nome fantasia" />
+        <br>
+
+        <!--cnpj do tipo text-->
+        <label for="empresa_cnpj">CNPJ</label>
+        <br>
+        <input type="text" id="empresa_cnpj" name="empresa_cnpj" placeholder="Digite seu CNPJ" />
+        <br>
+
+        <!--inscrição estadual do tipo text-->
+        <label for="empresa_inscricao_estadual">Inscrição estadual</label>
+        <br>
+        <input type="text" id="empresa_inscricao_estadual" name="empresa_inscricao_estadual" placeholder="Digite sua incrição estadual" />
+        <br>
+
+        <!--data de nascimento do tipo date-->
+        <label for="empresa_data_nascimento">Data de nascimento</label>
+        <br>
+        <input type="date" id="empresa_data_nascimento" name="empresa_data_nascimento" />
+        <br>
+        <button type="button" id="salvar_empresa">Salvar</button>
+
+    </form>
+</body>                                 
+
+</html>
