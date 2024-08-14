@@ -6,38 +6,15 @@ use app\database\builder\InsertQuery;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$disciplinaMatematica = [
-    'nome'    => 'Matemática',
-    'ativo'   =>'true',
+$disciplina_nome = isset($_POST['disciplina_nome']) ? filter_var($_POST['disciplina_nome'], FILTER_UNSAFE_RAW) : '';
+$disciplina_status = isset($_POST['disciplina_status']) ? filter_var($_POST['disciplina_status'], FILTER_UNSAFE_RAW) : false;
+
+$disciplina = [
+    'nome'  => $disciplina_nome,
+    'ativo' => $disciplina_status,
 ];
 
-$IsSave = InsertQuery::table('disciplina')->save($disciplinaMatematica);
+$IsSave = InsertQuery::table('disciplina')->save($disciplina);
 
-$disciplinaciencias = [
-    'nome'    => 'ciências',
-    'ativo'   => 'false',
-];
 
-$IsSave = InsertQuery::table('disciplina')->save($disciplinaciencias);
-
-$disciplinahistoria = [
-    'nome'    => 'história',
-    'ativo'   => 'false',
-];
-
-$IsSave = InsertQuery::table('disciplina')->save($disciplinahistoria);
-
-$disciplinageografia = [
-    'nome'    => 'geográfia',
-    'ativo'   => 'true',
-];
-
-$IsSave = InsertQuery::table('disciplina')->save($disciplinageografia);
-
-if ($IsSave != true) {
-    echo 'Não foi possível salvar';
-    die;
-}
-
-echo 'Disciplina salvo com sucesso!';
 

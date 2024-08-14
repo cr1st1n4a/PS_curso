@@ -19,6 +19,8 @@
         <li><a href="disciplina.html">Cadastro de disciplina</a></li>
         <li><a href="turma.html">Cadastro de turma</a></li>
     </ul>
+
+    <script>window.location.href = 'aluno.html'</script>
 </body>                                 
 
 </html>
