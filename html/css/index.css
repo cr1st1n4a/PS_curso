@@ -52,6 +52,26 @@ a:active {
     background-color: #003d7a;
 }
 
+.notificacao {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.notificacao.success {
+    background-color: #28a745;
+}
+
+.notificacao.error {
+    background-color: #dc3545;
+}
+
 /*Estilo dos formulários*/
 form {
     background-color: #fff;

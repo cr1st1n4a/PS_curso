@@ -24,6 +24,7 @@ class InsertQuery
             $keyName = implode(',', $key);
             $paramByName = ':' . implode(',:', $key);
             $sql = "INSERT INTO {$this->table} ({$keyName}) VALUES ({$paramByName})";
+            
             $con = Connection::open();
             $prepared = $con->prepare($sql);
             return $prepared->execute($values);
