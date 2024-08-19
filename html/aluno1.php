@@ -9,16 +9,18 @@
 </head>
 
 <body>
-
-    <h1>Menu de Cadastro</h1>
-    <ul>
-        <li><a href="aluno1.php">Cadastro de aluno</a></li>
-        <li><a href="empresa.html">Cadastro de empresa</a></li>
-        <li><a href="professor.html">Cadastro de professor</a></li>
-        <li><a href="disciplina.html">Cadastro de disciplina</a></li>
-        <li><a href="turma.html">Cadastro de turma</a></li>
-    </ul>
-
+<div class="dropdown">
+        <button class="btn btn-secundary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Menu de Cadastro
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="aluno1.php">Cadastro de aluno</a></li>
+            <li><a class="dropdown-item" href="empresa1.php">Cadastro de empresa</a></li>
+            <li><a class="dropdown-item" href="professor1.php">Cadastro de professor</a></li>
+            <li><a class="dropdown-item" href="disciplina1.php">Cadastro de disciplina</a></li>
+            <li><a class="dropdown-item" href="turma1.php">Cadastro de turma</a></li>
+        </ul>
+    </div>
     <form name="aluno" id="aluno" method="post">
         <div class="container">
             <div class="row">
