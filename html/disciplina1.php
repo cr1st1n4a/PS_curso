@@ -24,14 +24,41 @@
             <li><a class="dropdown-item" href="turma1.php">Cadastro de turma</a></li>
         </ul>
     </div>
+    <form name="disciplina" id="disciplina" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-floating mb-3">
+                        <h1>
+                            <span class="badge text-bg-secondary">
+                                Cadastro de disciplina
+                            </span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-warning" role="alert">
+                        Campos com * são obrigatórios para o cadastro.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="disciplina_nome" name="disciplina_nome" placeholder="Insira seu nome">
+                        <label for="disciplina_nome">Dgite o nome da disciplina</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-lg btn-success">Salvar</button>
+            </div>
+            <div></div>
+        </div>
 <form name="disciplina" id="disciplina" method="post">
-        <h2>Cadastro de disciplina</h2>
-
-        <label for="disciplina_nome">Nome</label>
-        <br>
-        <input type="text" id="disciplina_nome" name="disciplina_nome" placeholder="Digite seu nome" />
-        <br>
-
+    
         <label for="disciplina_status">Ativo</label>
         <input type="checkbox" id="disciplina_status" name="disciplina_status" value="true"/>
         <br>
