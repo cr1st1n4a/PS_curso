@@ -18,10 +18,13 @@
                         <a class="nav-link" href="/listadisciplina.php">Disciplina</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="/listaempresa.php">Empresa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        <a class="nav-link" href="/listaprofessor.php">Professor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listaturma.php">Turma</a>
                     </li>
                 </ul>
             </div>
@@ -74,17 +77,16 @@
 
                         </form>
                     </div>
-                    <div class="card-footer" role="group" aria-label="Basic example">
-                        <a href="/listaaluno.php" class="btn btn-outline-warning">
-                            <i class="fas fa-chevron-left"></i>
-                            Voltar
-                        </a>
-                        <button type="button" class="btn btn-outline-success">
-                            <i class="fas fa-save"></i>
-                            Salvar
-                        </button>
-                        <div class="btn-group">
-
+                    <div class="card-footer">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="/listaaluno.php" class="btn btn-outline-warning">
+                                <i class="fas fa-chevron-left"></i>
+                                Voltar
+                            </a>
+                            <button type="button" class="btn btn-outline-success">
+                                <i class="fas fa-save"></i>
+                                Salvar
+                            </button>
                         </div>
                     </div>
                 </div>

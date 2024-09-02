@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/all.min.css">
     <div class="container">
         <div class="row">
@@ -18,10 +18,13 @@
                         <a class="nav-link" href="/listadisciplina.php">Disciplina</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="/listaempresa.php">Empresa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        <a class="nav-link" href="/listaprofessor.php">Professor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listaturma.php">Turma</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +51,7 @@
                     <div class="card-header">
                         <h3>Cadastro e edição de Disciplina</h3>
                     </div>
-                    <div class="cardy-body">
+                    <div class="card-body">
                         <div class="col-12">
                             <div class="alert alert-warning" role="alert">
                                 todos os campos sinalizados com <span class="text-danger">*</span> são de preenchimento obrigatórios
@@ -64,7 +67,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="true" id="ativo">
                                     <label class="form-check-label" for="ativo">
-                                        Disciplina ativa
+                                        A Disciplina está ativa?
                                     </label>
                                 </div>
                             </div>
