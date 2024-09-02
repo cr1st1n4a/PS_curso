@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de aluno</title>
+    <title>Lista de professor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/all.min.css">
     <div class="container">
@@ -12,7 +12,7 @@
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/listaaluno.php">Aluno</a>
+                        <a class="nav-link" aria-current="page" href="/listaaluno.php">Aluno</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/listadisciplina.php">Disciplina</a>
@@ -21,7 +21,7 @@
                         <a class="nav-link" href="/listaempresa.php">Empresa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/listaprofessor.php">Professor</a>
+                        <a class="nav-link active" href="/listaprofessor.php">Professor</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/listaturma.php">Turma</a>
@@ -40,7 +40,7 @@
                         <li class="breadcrumb-item">
                             <a href="/">Início</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Lista de alunos</li>
+                        <li class="breadcrumb-item active" aria-current="page">Lista de professor</li>
                     </ol>
                 </nav>
             </div>
@@ -49,7 +49,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="/aluno.php" class="btn btn-outline-success">
+                        <a href="/professor.php" class="btn btn-outline-success">
                             <i class="fas fa-plus"></i>
                             Cadastro
                         </a>
@@ -75,7 +75,7 @@
                                     <td>10/10/2008</td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="/aluno.php?id=1" class="btn btn-outline-warning">
+                                            <a href="/professor.php?id=1" class="btn btn-outline-warning">
                                                 <i class="fas fa-edit"></i>
                                                 Editar
                                             </a>
@@ -94,7 +94,7 @@
                                     <td>10/10/2008</td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="/aluno.php?id=2" class="btn btn-outline-warning">
+                                            <a href="/professor.php?id=2" class="btn btn-outline-warning">
                                                 <i class="fas fa-edit"></i>
                                                 Editar
                                             </a>
