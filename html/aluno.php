@@ -41,7 +41,7 @@ $acao = 'e';
             </div>
         </div>
     </div>
-</head>
+</head> 
 
 <body>
     <div class="container">
