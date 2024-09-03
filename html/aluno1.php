@@ -16,4 +16,4 @@ $IsUpdate = UpdateQuery::table('aluno')
     ->where('id', '=', '1')
     ->update();
 
-
+var_dump($IsUpdate);
