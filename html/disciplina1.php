@@ -12,4 +12,4 @@ $fieldsAndValues = [
 $IsUpdate = UpdateQuery::table('disciplina')
     ->set($fieldsAndValues)
     ->where('id', '=', '1')
-    ->update();
+    ->update(); 
