@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    
+    <script>window.location.href = 'listaaluno.php'</script>
     <script src="js/all.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </body>

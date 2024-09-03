@@ -1,47 +1,49 @@
-/*seleciona o elemento HTML com o ID. Isso é usado para manipular ou adicionar eventos a esse elemento.
-O resultado é armazenado na constante 'SalvarAluno'*/
-const SalvarAluno = document.getElementById('salvar_aluno');
-const notificacao = document.getElementById('notificacao');
+const salvar_aluno = document.getElementById('btnsalvar');
+const Id = document.getElementById('id');
+const Action = document.getElementById('acao');
+const Alerta = document.getElementById('alert');
 
-function showNotificacao(message, type) {
-    notificacao.textContent = message;
-    notificacao.className = 'notificacao ${type}';
-    notificacao.style.display = 'block';
-
-    setTimeout(() => {
-        notificacao.style.accentColor.display = 'none';
-    }, 3000);
-}
-/* declara uma função assícrona chamada 'insert'. A palavra chave 'async' permite usar 'await' dento da função e indica que a função retorna uma 'promise'.*/
-async function insert() {
-    /*Seleciona o formulário HTML com o ID e o armazena na constante 'form'.*/
-    const form = document.getElementById('aluno');
-
-    /*Cria um novo objeto 'FormData' a aprtir do formulário. 'FormData' facilita o envio dos dados do formulário via 'POST'.*/
+async function Insert() {
+    const form = document.getElementById('form');
     const formData = new FormData(form);
-
-    /*: Cria um objeto de opções ('opt') para a solicitação 'fetch'. Define o método HTTP como 'POST' e o corpo da solicitação como os dados do formulário ('formData'). */
     const opt = {
         method: 'POST',
         body: formData
-    };
-    
-    try {
-        const response = await fetch('aluno.php', opt);
-        if (!response.ok) {
-            throw new Error('Erro na requisição: ' + response.statusText);
-        }
-
-        const result = await response.json();
-
-        showNotificacao('Aluno salvo com sucesso!', 'success');
-    } catch (error) {
-        console.error('Erro ao salvar aluno: ', error);
-
-        showNotificacao('Erro ao salvar aluno: ' + error.message, 'error');
     }
+    const response = await fetch(`/ControllerAluno.php`, opt);
+    const json = await response.json();
+    return json;
 }
+async function insert() {
+    //Podemos alterar o status da mensagem para salvando.
+    Alerta.className = 'alert alert-info';
+    Alerta.innerHTML = 'Salvando, por favor aguarde...';
+    const response = await Insert();
+    if (response.status != true) {
+        //Aqui exibimos a mensagem de erro
+        Alerta.className = 'alert alert-danger';
+        Alerta.innerHTML = response.msg;
+        setTimeout(function () {
+            Alerta.className = 'alert alert-warning';
+            Alerta.innerHTML = `Todos os campos com <span class="text text-danger">*</span> são obrigatórios para o cadastro`;
+        }, 5000);
+        return;
+    }
+    Alerta.className = 'alert alert-success';
+    Alerta.innerHTML = response.msg;
+    setTimeout(function () {
+        window.location.href = `/listaaluno.php?id=${response.id}`;
+    }, 2000);
+    //Exibir a mensagem de salvo com sucesso
+    //Depois de exibir a mensagem de salvo com sucesso
+    //Vamos direcionar para a pagina de listagem de alunos,
+    // de forma automatica.
+}
+async function update() {
 
-SalvarAluno.addEventListener('click', async () => {
+}
+salvar_aluno.addEventListener('click', async () => {
+
     await insert();
+    return;
 });

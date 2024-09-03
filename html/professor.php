@@ -1,14 +1,3 @@
-<?php
-$id = '';
-$acao = '';
-if (isset($_GET['id']) and !empty($_GET['id'])) {
-$id = $_GET['id'];
-$acao = 'e';
-} else {
-    $id = '';
-    $acao = 'c';
-};
-?>
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -23,7 +12,7 @@ $acao = 'e';
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/listaaluno.php">Aluno</a>
+                        <a class="nav-link active" aria-current="page" href="/listaaluno.php">Aluno</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/listadisciplina.php">Disciplina</a>
@@ -32,7 +21,7 @@ $acao = 'e';
                         <a class="nav-link" href="/listaempresa.php">Empresa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/listaprofessor.php">Professor</a>
+                        <a class="nav-link" href="/listaprofessor.php">Professor</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/listaturma.php">Turma</a>
@@ -69,8 +58,6 @@ $acao = 'e';
                             </div>
                         </div>
                         <form id="form">
-                            <input type="hidden" name="id" id="id" value="<?php echo $id; ?>">
-                            <input type="hidden" name="acao" id="acao" value="<?php echo $acao; ?>">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="nome" name="nome" placeholder="">
                                 <label for="nome">*Digite seu nome por favor</label>

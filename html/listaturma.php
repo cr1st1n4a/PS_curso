@@ -12,7 +12,7 @@
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/listaaluno.php">Aluno</a>
+                        <a class="nav-link active" aria-current="page" href="/listaaluno.php">Aluno</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/listadisciplina.php">Disciplina</a>
@@ -24,7 +24,7 @@
                         <a class="nav-link" href="/listaprofessor.php">Professor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/listaturma.php">Turma</a>
+                        <a class="nav-link" href="/listaturma.php">Turma</a>
                     </li>
             </div>
         </div>

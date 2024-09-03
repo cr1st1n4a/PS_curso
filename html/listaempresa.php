@@ -19,7 +19,7 @@
                         <a class="nav-link" href="/listadisciplina.php">Disciplina</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/listaempresa.php">Empresa</a>
+                        <a class="nav-link" href="/listaempresa.php">Empresa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/listaprofessor.php">Professor</a>
