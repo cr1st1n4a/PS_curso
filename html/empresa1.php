@@ -17,4 +17,22 @@ $IsUpdate = UpdateQuery::table('empresa')
     ->where('id', '=', '50')
     ->update();
 
-var_dump($IsUpdate);
+
+$response = [];
+
+if ($IsUpdate) {
+    $response = [
+        'status' => 'success',
+        'msg'    => 'Dados salvos com sucesso',
+        'id'     => '50'
+    ];
+} else {
+
+    $response = [
+        'status' => 'error',
+        'msg'    => 'Rescrição',
+        'id'     => '50'
+    ];
+}
+
+echo json_encode($response);

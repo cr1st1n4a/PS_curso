@@ -17,4 +17,22 @@ $IsUpdate = UpdateQuery::table('professor')
     ->where('id', '=', '55')
     ->update();
 
-var_dump($IsUpdate);
+
+$response = [];
+
+if ($IsUpdate) {
+    $response = [
+        'status' => 'success',
+        'msg'    => 'Dados salvos com sucesso',
+        'id'     => '55'
+    ];
+} else {
+
+    $response = [
+        'status' => 'error',
+        'msg'    => 'Rescrição',
+        'id'     => '55'
+    ];
+}
+
+echo json_encode($response);

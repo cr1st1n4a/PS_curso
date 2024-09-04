@@ -13,6 +13,23 @@ $fieldsAndValues = [
 $IsUpdate = UpdateQuery::table('disciplina')
     ->set($fieldsAndValues)
     ->where('id', '=', '49')
-    ->update(); 
+    ->update();
 
-var_dump($IsUpdate);
+$response = [];
+
+if ($IsUpdate) {
+    $response = [
+        'status' => 'success',
+        'msg'    => 'Dados salvos com sucesso',
+        'id'     => '49'
+    ];
+} else {
+
+    $response = [
+        'status' => 'error',
+        'msg'    => 'Rescrição',
+        'id'     => '49'
+    ];
+}
+
+echo json_encode($response);

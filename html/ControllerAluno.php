@@ -2,6 +2,7 @@
 
 use app\database\builder\InsertQuery;
 use app\database\builder\SelectQuery;
+use app\database\builder\UpdateQuery;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -26,6 +27,13 @@ if ($acao == 'c') {
         ->fetch(); #Listamos todos os registro da tabela
     $id = $aluno['id'];
 }
+if ($acao == 'e') {
+    $IsSave = UpdateQuery::table('aluno')
+        ->set($FieldsAndValues)
+        ->where('id', '=', $id)
+        ->update();
+}
+
 #Definimos que o tipo de retorno será json
 header("Content-type: application/json; charset=utf-8");
 echo ($IsSave == true) ?
@@ -41,6 +49,6 @@ echo ($IsSave == true) ?
         [
             'status' => false,
             'msg' => 'Restrição: ' . $IsSave,
-            'id' => 1
+            'id' => $id
         ]
     );

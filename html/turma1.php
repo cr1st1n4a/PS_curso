@@ -16,4 +16,22 @@ $IsUpdate = UpdateQuery::table('turma')
     ->where('id', '=', '63')
     ->update();
 
-var_dump($IsUpdate);
+
+$response = [];
+
+if ($IsUpdate) {
+    $response = [
+        'status' => 'success',
+        'msg'    => 'Dados salvos com sucesso',
+        'id'     => '63'
+    ];
+} else {
+
+    $response = [
+        'status' => 'error',
+        'msg'    => 'Rescrição',
+        'id'     => '63'
+    ];
+}
+
+echo json_encode($response);

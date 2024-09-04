@@ -4,16 +4,34 @@ use app\database\builder\UpdateQuery;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+header('Content-type: application/json');
 $fieldsAndValues = [
 
-    'nome'               => 'Bruno',
-    'cpf'                => '123.123.123-12',
-    'rg'                 => '789456',
-    'data_de_nascimento' => '1999-12-12',
+    'nome'               => $_POST['aluno_nome'],
+    'cpf'                => $_POST['aluno_cpf'],
+    'rg'                 => $_POST['aluno_rg'],
+    'data_de_nascimento' => $_POST['aluno_data_nascimento'],
 ];
 $IsUpdate = UpdateQuery::table('aluno')
     ->set($fieldsAndValues)
-    ->where('id', '=', '172')
+    ->where('id', '=', $id)
     ->update();
 
-var_dump($IsUpdate);
+$response = [];
+
+if ($IsUpdate) {
+    $response = [
+        'status' => 'success',
+        'msg'    => 'Dados salvos com sucesso',
+        'id'     => '172'
+    ];
+} else {
+
+    $response = [
+        'status' => 'error',
+        'msg'    => 'Rescrição',
+        'id'     => '172'
+    ];
+}
+
+echo json_encode($response);

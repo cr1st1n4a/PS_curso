@@ -1,4 +1,4 @@
-const salvar_aluno = document.getElementById('btnsalvar');
+const salvar = document.getElementById('btnsalvar');
 const Id = document.getElementById('id');
 const Action = document.getElementById('acao');
 const Alerta = document.getElementById('alert');
@@ -9,14 +9,14 @@ async function Insert() {
     const opt = {
         method: 'POST',
         body: formData
-    }
+    };
     const response = await fetch(`/ControllerAluno.php`, opt);
     const json = await response.json();
     return json;
 }
 async function insert() {
     //Podemos alterar o status da mensagem para salvando.
-    Alerta.className = 'alert alert-info';
+    Alerta.className = 'alert alert-primary';
     Alerta.innerHTML = 'Salvando, por favor aguarde...';
     const response = await Insert();
     if (response.status != true) {
@@ -41,9 +41,34 @@ async function insert() {
 }
 async function update() {
 
+    const form = document.getElementById('form');
+    const formData = new FormData(form);
+    const opt = {
+        method: 'POST',
+        body: formData
+    };
+    Alerta.className = 'Alert alert-primary';
+    Alerta.innerHTML = 'Salvando, por favor aguarde...'
+    const request = await fetch('/ControllerAluno.php', opt);
+    const response = await request.json();
+
+    if (response.status === true) {
+        Alerta.className = 'alert alert-success';
+        Alerta.innerHTML = response.msg;
+        Action.value = 'e';
+        setTimeout(() => {
+            Alerta.className = 'alert alert-warning';
+            Alerta.innerHTML = `Todos os campos sinalizados com <span class="text-danger">*</span> são de preenchimento obrigatórios `;
+        }, 1000);
+        return;
+    }
+    mensagem.className = 'alert alert-danger';
+    mensagem.innerHTML = response.msg;
 }
 salvar_aluno.addEventListener('click', async () => {
-
+if (Action.value == 'c') {
     await insert();
     return;
+}
+    await update();
 });
