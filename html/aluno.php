@@ -69,8 +69,8 @@ $acao = 'e';
                             </div>
                         </div>
                         <form id="form">
-                            <input type="text" name="id" id="id" value="<?php echo $id; ?>">
-                            <input type="text" name="acao" id="acao" value="<?php echo $acao; ?>">
+                            <input type="hidden" name="id" id="id" value="<?php echo $id; ?>">
+                            <input type="hidden" name="acao" id="acao" value="<?php echo $acao; ?>">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="nome" name="nome" placeholder="">
                                 <label for="nome">*Digite seu nome por favor</label>
@@ -106,6 +106,7 @@ $acao = 'e';
             </div>
         </div>
     </div>
+    
     <script src="/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.min.js"></script>
 </body>

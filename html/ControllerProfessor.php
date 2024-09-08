@@ -21,15 +21,15 @@ $FieldsAndValues = [
 ];
 $IsSave = false;
 if ($acao == 'c') {
-    $IsSave = InsertQuery::table('aluno')->save($FieldsAndValues);
-    $aluno = (array)SelectQuery::select('id') #Passo os campos para a classo
-        ->from('aluno') #Passo para a classe Select o nome da tabela
+    $IsSave = InsertQuery::table('professor')->save($FieldsAndValues);
+    $professor = (array)SelectQuery::select('id') #Passo os campos para a classo
+        ->from('professor') #Passo para a classe Select o nome da tabela
         ->order('id', 'desc') #Pegamos o ultimo id inserido no banco de dados 
         ->fetch(); #Listamos todos os registro da tabela
-    $id = $aluno['id'];
+    $id = $professor['id'];
 }
 if ($acao == 'e') {
-    $IsSave = UpdateQuery::table('aluno')
+    $IsSave = UpdateQuery::table('professor')
         ->set($FieldsAndValues)
         ->where('id', '=', $id)
         ->update();

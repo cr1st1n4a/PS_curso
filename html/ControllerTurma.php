@@ -8,28 +8,26 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $id = $_POST['id'];
 $acao = $_POST['acao'];
-$nome = $_POST['nome'];
-$cpf = $_POST['cpf'];
-$rg = $_POST['rg'];
-$data_nascimento = $_POST['data_nascimento'];
-
+$quantidade_de_alunos = $_POST['quantidade_alunos'];
+$data_de_inicio = $_POST['data_inicio'];
+$data_de_fim = $_POST['data_fim'];
+;
 $FieldsAndValues = [
-    'nome' => $nome,
-    'cpf' => $cpf,
-    'rg' => $rg,
-    'data_nascimento' => $data_nascimento
+    'quantidade_de_alunos'  => $quantidade_alunos,
+    'data_de_inicio'        => $data_inicio,
+    'data_de_fim'           => $data_fim,
 ];
 $IsSave = false;
 if ($acao == 'c') {
-    $IsSave = InsertQuery::table('aluno')->save($FieldsAndValues);
-    $aluno = (array)SelectQuery::select('id') #Passo os campos para a classo
-        ->from('aluno') #Passo para a classe Select o nome da tabela
+    $IsSave = InsertQuery::table('turma')->save($FieldsAndValues);
+    $turma = (array)SelectQuery::select('id') #Passo os campos para a classo
+        ->from('turma') #Passo para a classe Select o nome da tabela
         ->order('id', 'desc') #Pegamos o ultimo id inserido no banco de dados 
         ->fetch(); #Listamos todos os registro da tabela
-    $id = $aluno['id'];
+    $id = $turma['id'];
 }
 if ($acao == 'e') {
-    $IsSave = UpdateQuery::table('aluno')
+    $IsSave = UpdateQuery::table('turma')
         ->set($FieldsAndValues)
         ->where('id', '=', $id)
         ->update();

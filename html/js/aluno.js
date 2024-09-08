@@ -1,4 +1,4 @@
-const salvar = document.getElementById('btnsalvar');
+const salvar = document.getElementById('salvar');
 const Id = document.getElementById('id');
 const Action = document.getElementById('acao');
 const Alerta = document.getElementById('alert');

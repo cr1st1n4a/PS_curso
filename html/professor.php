@@ -58,6 +58,8 @@
                             </div>
                         </div>
                         <form id="form">
+                        <input type="hidden" name="id" id="id" value="<?php echo $id; ?>">
+                        <input type="hidden" name="acao" id="acao" value="<?php echo $acao; ?>">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="nome" name="nome" placeholder="">
                                 <label for="nome">*Digite seu nome por favor</label>
@@ -83,8 +85,8 @@
                                 <i class="fas fa-chevron-left"></i>
                                 Voltar
                             </a>
-                            <button type="button" class="btn btn-outline-success">
-                                <i class="fas fa-save"></i>
+                            <button type="button" class="btn btn-outline-success" id="salvar">
+                                <i class="fas fa-save" ></i>
                                 Salvar
                             </button>
                         </div>

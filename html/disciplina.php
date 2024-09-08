@@ -91,7 +91,7 @@ $acao = 'e';
                             <i class="fas fa-chevron-left"></i>
                             Voltar
                         </a>
-                        <button type="button" class="btn btn-outline-success">
+                        <button type="button" class="btn btn-outline-success" id="salvar">
                             <i class="fas fa-save"></i>
                             Salvar
                         </button>

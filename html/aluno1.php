@@ -7,10 +7,10 @@ require __DIR__ . '/../vendor/autoload.php';
 header('Content-type: application/json');
 $fieldsAndValues = [
 
-    'nome'               => $_POST['aluno_nome'],
-    'cpf'                => $_POST['aluno_cpf'],
-    'rg'                 => $_POST['aluno_rg'],
-    'data_de_nascimento' => $_POST['aluno_data_nascimento'],
+    'nome'               => $_POST['nome'],
+    'cpf'                => $_POST['cpf'],
+    'rg'                 => $_POST['rg'],
+    'data_de_nascimento' => $_POST['data_nascimento'],
 ];
 $IsUpdate = UpdateQuery::table('aluno')
     ->set($fieldsAndValues)
