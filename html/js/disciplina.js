@@ -3,7 +3,7 @@ const id = document.getElementById('id');
 const Action = document.getElementById('acao');
 const Alerta = document.getElementById('alert');
 
-async function insert() {
+async function Insert() {
     const form = document.getElementById('form');
     const formData = new FormData(form);
     const opt = {
@@ -15,7 +15,7 @@ async function insert() {
     return json;
 }
 async function insert() {
-     //Podemos alterar o status da mensagem para salvando.
+    //Podemos alterar o status da mensagem para salvando.
     Alerta.className = 'alert alert-primary';
     Alerta.innerHTML = 'Salvando, por favor aguarde...';
     const response = await Insert();
@@ -40,7 +40,7 @@ async function insert() {
     // de forma automatica.
 }
 async function update() {
-    
+
     const form = document.getElementById('form');
     const formData = new FormData(form);
     const opt = {
@@ -65,10 +65,10 @@ async function update() {
     mensagem.className = 'alert alert-danger';
     mensagem.innerHTML = response.msg;
 }
-salvar_disciplina.addEventListener('click', async () => {
+salvar.addEventListener('click', async () => {
     if (Action.value == 'c') {
         await insert();
         return;
     }
     await update();
-    });
+});
