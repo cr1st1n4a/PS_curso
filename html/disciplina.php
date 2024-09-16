@@ -27,6 +27,9 @@ if (isset($_GET['id']) and !empty($_GET['id'])) {
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/index.php">Início</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/listaaluno.php">Aluno</a>
                     </li>
                     <li class="nav-item">
@@ -69,7 +72,7 @@ if (isset($_GET['id']) and !empty($_GET['id'])) {
                     <div class="card-body">
                         <div class="col-12">
                             <div class="alert alert-warning" role="alert" id="alert">
-                                todos os campos sinalizados com <span class="text-danger">*</span> são de preenchimento obrigatórios
+                                Todos os campos sinalizados com <span class="text-danger">*</span> são de preenchimento obrigatórios
                             </div>
                         </div>
                         <form id="form">

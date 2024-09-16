@@ -12,7 +12,10 @@
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/listaaluno.php">Aluno</a>
+                        <a class="nav-link" aria-current="page" href="/index.php">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/listaaluno.php">Aluno</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/listadisciplina.php">Disciplina</a>
@@ -24,7 +27,7 @@
                         <a class="nav-link" href="/listaprofessor.php">Professor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/listaturma.php">Turma</a>
+                        <a class="nav-link active" href="/listaturma.php">Turma</a>
                     </li>
             </div>
         </div>
@@ -85,7 +88,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                <td>1</td>
+                                    <td>1</td>
                                     <td>28</td>
                                     <td>02/02/2001</td>
                                     <td>02/12/2001</td>
@@ -102,7 +105,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -110,7 +113,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.min.js"></script>
 

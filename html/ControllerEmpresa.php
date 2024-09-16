@@ -8,16 +8,19 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $id = $_POST['id'];
 $acao = $_POST['acao'];
-$nome_fantasia = $_POST['empresa_nome_fantasia'];
-$cnpj = $_POST['empresa_cnpj'];
-$inscricao_estadual = $_POST['empresa_inscricao_estadual'];
-;
+$nome_fantasia = $_POST['nome_fantasia'];
+$cnpj = $_POST['cnpj'];
+$inscricao_estadual = $_POST['inscricao_estadual'];
+$data_de_fundacao = $_POST['data_de_fundacao'];
+
 $FieldsAndValues = [
-    'nome_fantasia'       => $empresa_nome_fantasia,
-    'cnpj'                => $empresa_cnpj,
-    'inscricao_estadual'  => $empresa_inscricao_estadual,
-    'data_de_fundacao'    => $empresa_data_fundacao,
+    'nome_fantasia'       => $nome_fantasia,
+    'cnpj'                => $cnpj,
+    'inscricao_estadual'  => $inscricao_estadual,
+    'data_de_fundacao'    => $data_de_fundacao,
 ];
+var_dump($FieldsAndValues);
+die;
 $IsSave = false;
 if ($acao == 'c') {
     $IsSave = InsertQuery::table('empresa')->save($FieldsAndValues);

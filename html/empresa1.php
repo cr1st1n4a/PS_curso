@@ -1,38 +1,54 @@
 <?php
 
+use app\database\builder\InsertQuery;
+use app\database\builder\SelectQuery;
 use app\database\builder\UpdateQuery;
 
-require __DIR__ . '/../vendor/autoload.php';
 
-$id = $_POST['id'];
+header("Content-type: application/json; charset=utf-8");
 
-$fieldsAndValues = [
-    'nome_fantasia'       => 'ceu',
-    'cnpj'                => '00.000.000/0000-00',
-    'inscricao_estadual'  => '1651646',
-    'data_de_fundacao'    => '1999-12-12',
+$response = [
+    'status' => false,
+    'msg' => 'Restrição desconhecida.',
+    'id' => null
 ];
-$IsUpdate = UpdateQuery::table('empresa')
-    ->set($fieldsAndValues)
-    ->where('id', '=', '50')
-    ->update();
+
+try {
+    // Receber dados do POST
+    $acao = $_POST['acao'] ?? '';
+    $id = $_POST['id'] ?? null;
+    $FieldsAndValues = $_POST['FieldsAndValues'] ?? [];
 
 
-$response = [];
-
-if ($IsUpdate) {
-    $response = [
-        'status' => 'success',
-        'msg'    => 'Dados salvos com sucesso',
-        'id'     => '50'
-    ];
-} else {
-
-    $response = [
-        'status' => 'error',
-        'msg'    => 'Rescrição',
-        'id'     => '50'
-    ];
+    // Processar a ação solicitada
+    if ($acao === 'c') {
+        $IsSave = InsertQuery::table('empresa')->save($FieldsAndValues);
+        $empresa = (array)SelectQuery::select('id')
+            ->from('empresa')
+            ->order('id', 'desc')
+            ->fetch();
+        $id = $empresa['id'];
+        $response['status'] = $IsSave;
+        $response['msg'] = $IsSave ? 'Salvo com sucesso!' : 'Falha ao salvar.';
+        $response['id'] = $id;
+    } elseif ($acao === 'e') {
+        if ($id) {
+            $IsSave = UpdateQuery::table('empresa')
+                ->set($FieldsAndValues)
+                ->where('id', '=', $id)
+                ->update();
+            $response['status'] = $IsSave;
+            $response['msg'] = $IsSave ? 'Atualizado com sucesso!' : 'Falha ao atualizar.';
+            $response['id'] = $id;
+        } else {
+            $response['msg'] = 'ID não fornecido para atualização.';
+        }
+    } else {
+        $response['msg'] = 'Ação inválida.';
+    }
+} catch (Exception $e) {
+    $response['msg'] = 'Erro: ' . $e->getMessage();
 }
 
+// Enviar a resposta como JSON
 echo json_encode($response);

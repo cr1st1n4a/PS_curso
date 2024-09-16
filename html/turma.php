@@ -12,7 +12,10 @@
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/listaaluno.php">Aluno</a>
+                        <a class="nav-link" aria-current="page" href="/index.php">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/listaaluno.php">Aluno</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/listadisciplina.php">Disciplina</a>
@@ -24,7 +27,7 @@
                         <a class="nav-link" href="/listaprofessor.php">Professor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/listaturma.php">Turma</a>
+                        <a class="nav-link active" href="/listaturma.php">Turma</a>
                     </li>
                 </ul>
             </div>
@@ -58,8 +61,8 @@
                             </div>
                         </div>
                         <form id="form">
-                        <input type="hidden" name="id" id="id" value="<?php echo $id; ?>">
-                        <input type="hidden" name="acao" id="acao" value="<?php echo $acao; ?>">
+                            <input type="hidden" name="id" id="id" value="<?php echo $id; ?>">
+                            <input type="hidden" name="acao" id="acao" value="<?php echo $acao; ?>">
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control" id="quantidade_alunos" name="quantidade_alunos" placeholder="">
                                 <label for="quantidade_alunos">*Digite a quantidade de alunos por favor</label>
@@ -72,7 +75,7 @@
                                 <input type="date" class="form-control" id="data_fim" name="data_fim" placeholder="">
                                 <label for="data_fim">*Digite a data final por favor</label>
                             </div>
-                            
+
 
                         </form>
                     </div>
